@@ -1,6 +1,8 @@
 using HTTP
 using JSON
 
+include("utils.jl")
+
 function request(; url::String,
                  query::Union{Nothing, String}=nothing,
                  filter::Union{Nothing, Dict{String, String}}=nothing,
@@ -17,7 +19,7 @@ function request(; url::String,
                   ("X-USER-AGENT", string(ENV["JULIA_MAILTO"])))
 
         payload = Dict("query" => query,
-                       "filter" => filter,
+                       "filter" => filter_handler(filter),
                        "offset" => offset,
                        "rows" => limit,
                        "sample" => sample,
