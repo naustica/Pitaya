@@ -240,3 +240,25 @@ function prefixes(; owner_prefix::Union{Nothing, String}=nothing,
                   cursor=cursor)
 
 end
+
+
+function licenses(; query::Union{Nothing, String}=nothing,
+                  offset::Union{Nothing, Int}=nothing,
+                  limit::Union{Nothing, Int}=nothing,
+                  sample::Union{Nothing, Int}=nothing,
+                  sort::Union{Nothing, String}=nothing,
+                  order::Union{Nothing, String}=nothing,
+                  facet::Union{Nothing, Dict{String, Union{String, Int}}}=nothing)
+
+         url="https://api.crossref.org/licenses"
+
+          request(url=url,
+                  query=query,
+                  offset=offset,
+                  limit=limit,
+                  sample=sample,
+                  sort=sort,
+                  order=order,
+                  facet=facet)
+
+end

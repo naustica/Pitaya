@@ -14,6 +14,8 @@ include("api.jl")
 
 #prefixes(owner_prefix="10.1016", works=true, limit=1)
 
-export works, members, funders, journals, types, prefixes
+#licenses(query="creative", limit=1)
+
+export works, members, funders, journals, types, prefixes, licenses
 
 end # module
