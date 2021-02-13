@@ -15,6 +15,18 @@ function request(; url::String,
                  select::Union{Nothing, String}=nothing,
                  cursor::Union{Nothing, String}=nothing)
 
+        if !isnothing(offset)
+                if offset > 10000 # max offset
+                        error("Offset; Max: 10000")
+                end
+        end
+
+        if !isnothing(sample)
+                if sample > 100 # max sample size
+                        error("Sample size; Max: 100")
+                end
+        end
+
         headers = (("User-Agent", string("mailto:", ENV["JULIA_MAILTO"])),
                   ("X-USER-AGENT", string(ENV["JULIA_MAILTO"])))
 
@@ -25,7 +37,7 @@ function request(; url::String,
                        "sample" => sample,
                        "sort" => sort,
                        "order" => order,
-                       "facet" => facet,
+                       "facet" => filter_handler(facet),
                        "select" => select,
                        "cursor" => cursor)
 

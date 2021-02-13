@@ -5,11 +5,56 @@
 
 A Julia interface to the [Crossref REST API](https://github.com/CrossRef/rest-api-doc). Inspired by [habanero](https://github.com/sckott/habanero).
 
+## Install
+
+```bash
+(v1.5) pkg> add https://github.com/naustica/Pitaya
+```
+
 ## Usage
 
 ```Julia
 using Pitaya
 
 ENV["JULIA_MAILTO"] = "nick.haupka@gmail.com"
+```
+
+### Works
+
+```Julia
 works(query="Heisenberg", limit=1)
+```
+
+```Julia
+works(doi="10.1038/nature12373")
+```
+
+### Members
+
+```Julia
+members(member_id=98, works=true, limit=5, sort="updated")
+```
+
+### Funders
+
+```Julia
+funders(funder_id="10.13039/100000001", works=true, limit=5)
+```
+
+### Journals
+
+```Julia
+journals(issn="1549-7712", works=true, offset=20, limit=10)
+```
+
+### Types
+
+```Julia
+types(type_id="reference-book", works=true, sample=20)
+```
+
+### Prefixes
+
+```Julia
+prefixes(owner_prefix="10.1016", works=true, order="desc", limit=20)
 ```
