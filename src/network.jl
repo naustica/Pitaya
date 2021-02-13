@@ -48,5 +48,5 @@ function request(; url::String,
         end
 
         r = HTTP.get(url, headers; query=payload)
-        print(JSON.parse(String(r.body)))
+        return JSON.parse(String(r.body))
 end

@@ -17,21 +17,20 @@ function works(; doi::Union{Nothing, String}=nothing,
 
     if !isnothing(doi)
             url = string(url, "/", doi)
-            request(url=url)
-            return
+            return request(url=url)
     end
 
-    request(url=url,
-            query=query,
-            filter=filter,
-            offset=offset,
-            limit=limit,
-            sample=sample,
-            sort=sort,
-            order=order,
-            facet=facet,
-            select=select,
-            cursor=cursor)
+    return request(url=url,
+                   query=query,
+                   filter=filter,
+                   offset=offset,
+                   limit=limit,
+                   sample=sample,
+                   sort=sort,
+                   order=order,
+                   facet=facet,
+                   select=select,
+                   cursor=cursor)
 
 end
 
@@ -56,23 +55,22 @@ function members(; member_id::Union{Nothing, Int}=nothing,
                 if works
                         url = string(url, "/works")
                 else
-                        request(url=url)
-                        return
+                        return request(url=url)
                 end
 
         end
 
-         request(url=url,
-                 query=query,
-                 filter=filter,
-                 offset=offset,
-                 limit=limit,
-                 sample=sample,
-                 sort=sort,
-                 order=order,
-                 facet=facet,
-                 select=select,
-                 cursor=cursor)
+         return request(url=url,
+                        query=query,
+                        filter=filter,
+                        offset=offset,
+                        limit=limit,
+                        sample=sample,
+                        sort=sort,
+                        order=order,
+                        facet=facet,
+                        select=select,
+                        cursor=cursor)
 
 end
 
@@ -97,23 +95,22 @@ function funders(; funder_id::Union{Nothing, String}=nothing,
                  if works
                          url = string(url, "/works")
                  else
-                         request(url=url)
-                         return
+                         return request(url=url)
                  end
 
          end
 
-          request(url=url,
-                  query=query,
-                  filter=filter,
-                  offset=offset,
-                  limit=limit,
-                  sample=sample,
-                  sort=sort,
-                  order=order,
-                  facet=facet,
-                  select=select,
-                  cursor=cursor)
+          return request(url=url,
+                         query=query,
+                         filter=filter,
+                         offset=offset,
+                         limit=limit,
+                         sample=sample,
+                         sort=sort,
+                         order=order,
+                         facet=facet,
+                         select=select,
+                         cursor=cursor)
 
  end
 
@@ -139,23 +136,22 @@ function journals(; issn::Union{Nothing, String}=nothing,
                 if works
                         url = string(url, "/works")
                 else
-                        request(url=url)
-                        return
+                        return request(url=url)
                 end
 
         end
 
-         request(url=url,
-                 query=query,
-                 filter=filter,
-                 offset=offset,
-                 limit=limit,
-                 sample=sample,
-                 sort=sort,
-                 order=order,
-                 facet=facet,
-                 select=select,
-                 cursor=cursor)
+         return request(url=url,
+                        query=query,
+                        filter=filter,
+                        offset=offset,
+                        limit=limit,
+                        sample=sample,
+                        sort=sort,
+                        order=order,
+                        facet=facet,
+                        select=select,
+                        cursor=cursor)
 
 end
 
@@ -180,23 +176,22 @@ function types(; type_id::Union{Nothing, String}=nothing,
                  if works
                          url = string(url, "/works")
                  else
-                         request(url=url)
-                         return
+                         return request(url=url)
                  end
 
          end
 
-          request(url=url,
-                  query=query,
-                  filter=filter,
-                  offset=offset,
-                  limit=limit,
-                  sample=sample,
-                  sort=sort,
-                  order=order,
-                  facet=facet,
-                  select=select,
-                  cursor=cursor)
+          return request(url=url,
+                         query=query,
+                         filter=filter,
+                         offset=offset,
+                         limit=limit,
+                         sample=sample,
+                         sort=sort,
+                         order=order,
+                         facet=facet,
+                         select=select,
+                         cursor=cursor)
 
 end
 
@@ -221,23 +216,22 @@ function prefixes(; owner_prefix::Union{Nothing, String}=nothing,
                  if works
                          url = string(url, "/works")
                  else
-                         request(url=url)
-                         return
+                         return request(url=url)
                  end
 
          end
 
-          request(url=url,
-                  query=query,
-                  filter=filter,
-                  offset=offset,
-                  limit=limit,
-                  sample=sample,
-                  sort=sort,
-                  order=order,
-                  facet=facet,
-                  select=select,
-                  cursor=cursor)
+          return request(url=url,
+                         query=query,
+                         filter=filter,
+                         offset=offset,
+                         limit=limit,
+                         sample=sample,
+                         sort=sort,
+                         order=order,
+                         facet=facet,
+                         select=select,
+                         cursor=cursor)
 
 end
 
@@ -252,13 +246,13 @@ function licenses(; query::Union{Nothing, String}=nothing,
 
          url="https://api.crossref.org/licenses"
 
-          request(url=url,
-                  query=query,
-                  offset=offset,
-                  limit=limit,
-                  sample=sample,
-                  sort=sort,
-                  order=order,
-                  facet=facet)
+          return request(url=url,
+                         query=query,
+                         offset=offset,
+                         limit=limit,
+                         sample=sample,
+                         sort=sort,
+                         order=order,
+                         facet=facet)
 
 end
