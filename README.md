@@ -18,7 +18,7 @@ A Julia interface to the [Crossref REST API](https://github.com/CrossRef/rest-ap
 ```Julia
 using Pitaya
 
-ENV["JULIA_MAILTO"] = "nick.haupka@gmail.com"
+ENV["MAILTO"] = "nick.haupka@gmail.com"
 ```
 
 ### Works

@@ -1,3 +1,5 @@
+using JSON
+
 include("network.jl")
 
 
@@ -17,20 +19,23 @@ function works(; doi::Union{Nothing, String}=nothing,
 
     if !isnothing(doi)
             url = string(url, "/", doi)
-            return request(url=url)
+            r = request(url=url)
+            return JSON.parse(String(r.body))
     end
 
-    return request(url=url,
-                   query=query,
-                   filter=filter,
-                   offset=offset,
-                   limit=limit,
-                   sample=sample,
-                   sort=sort,
-                   order=order,
-                   facet=facet,
-                   select=select,
-                   cursor=cursor)
+    r = request(url=url,
+                query=query,
+                filter=filter,
+                offset=offset,
+                limit=limit,
+                sample=sample,
+                sort=sort,
+                order=order,
+                facet=facet,
+                select=select,
+                cursor=cursor)
+
+    return JSON.parse(String(r.body))
 
 end
 
@@ -55,22 +60,25 @@ function members(; member_id::Union{Nothing, Int}=nothing,
                 if works
                         url = string(url, "/works")
                 else
-                        return request(url=url)
+                        r = request(url=url)
+                        return JSON.parse(String(r.body))
                 end
 
         end
 
-         return request(url=url,
-                        query=query,
-                        filter=filter,
-                        offset=offset,
-                        limit=limit,
-                        sample=sample,
-                        sort=sort,
-                        order=order,
-                        facet=facet,
-                        select=select,
-                        cursor=cursor)
+        r = request(url=url,
+                    query=query,
+                    filter=filter,
+                    offset=offset,
+                    limit=limit,
+                    sample=sample,
+                    sort=sort,
+                    order=order,
+                    facet=facet,
+                    select=select,
+                    cursor=cursor)
+
+        return JSON.parse(String(r.body))
 
 end
 
@@ -88,31 +96,34 @@ function funders(; funder_id::Union{Nothing, String}=nothing,
                  works::Bool=false,
                  cursor::Union{Nothing, String}=nothing)
 
-         url="https://api.crossref.org/funders"
+        url="https://api.crossref.org/funders"
 
-         if !isnothing(funder_id)
-                 url = string(url, "/", funder_id)
-                 if works
-                         url = string(url, "/works")
-                 else
-                         return request(url=url)
-                 end
+        if !isnothing(funder_id)
+                url = string(url, "/", funder_id)
+                if works
+                        url = string(url, "/works")
+                else
+                        r = request(url=url)
+                        return JSON.parse(String(r.body))
+                end
 
-         end
+        end
 
-          return request(url=url,
-                         query=query,
-                         filter=filter,
-                         offset=offset,
-                         limit=limit,
-                         sample=sample,
-                         sort=sort,
-                         order=order,
-                         facet=facet,
-                         select=select,
-                         cursor=cursor)
+        r =  request(url=url,
+                     query=query,
+                     filter=filter,
+                     offset=offset,
+                     limit=limit,
+                     sample=sample,
+                     sort=sort,
+                     order=order,
+                     facet=facet,
+                     select=select,
+                     cursor=cursor)
 
- end
+        return JSON.parse(String(r.body))
+
+end
 
 
 function journals(; issn::Union{Nothing, String}=nothing,
@@ -136,22 +147,25 @@ function journals(; issn::Union{Nothing, String}=nothing,
                 if works
                         url = string(url, "/works")
                 else
-                        return request(url=url)
+                        r = request(url=url)
+                        return JSON.parse(String(r.body))
                 end
 
         end
 
-         return request(url=url,
-                        query=query,
-                        filter=filter,
-                        offset=offset,
-                        limit=limit,
-                        sample=sample,
-                        sort=sort,
-                        order=order,
-                        facet=facet,
-                        select=select,
-                        cursor=cursor)
+        r = request(url=url,
+                    query=query,
+                    filter=filter,
+                    offset=offset,
+                    limit=limit,
+                    sample=sample,
+                    sort=sort,
+                    order=order,
+                    facet=facet,
+                    select=select,
+                    cursor=cursor)
+
+        return JSON.parse(String(r.body))
 
 end
 
@@ -176,22 +190,25 @@ function types(; type_id::Union{Nothing, String}=nothing,
                  if works
                          url = string(url, "/works")
                  else
-                         return request(url=url)
+                         r = request(url=url)
+                         return JSON.parse(String(r.body))
                  end
 
          end
 
-          return request(url=url,
-                         query=query,
-                         filter=filter,
-                         offset=offset,
-                         limit=limit,
-                         sample=sample,
-                         sort=sort,
-                         order=order,
-                         facet=facet,
-                         select=select,
-                         cursor=cursor)
+         r = request(url=url,
+                     query=query,
+                     filter=filter,
+                     offset=offset,
+                     limit=limit,
+                     sample=sample,
+                     sort=sort,
+                     order=order,
+                     facet=facet,
+                     select=select,
+                     cursor=cursor)
+
+        return JSON.parse(String(r.body))
 
 end
 
@@ -216,22 +233,25 @@ function prefixes(; owner_prefix::Union{Nothing, String}=nothing,
                  if works
                          url = string(url, "/works")
                  else
-                         return request(url=url)
+                         r = request(url=url)
+                         return JSON.parse(String(r.body))
                  end
 
          end
 
-          return request(url=url,
-                         query=query,
-                         filter=filter,
-                         offset=offset,
-                         limit=limit,
-                         sample=sample,
-                         sort=sort,
-                         order=order,
-                         facet=facet,
-                         select=select,
-                         cursor=cursor)
+         r = request(url=url,
+                     query=query,
+                     filter=filter,
+                     offset=offset,
+                     limit=limit,
+                     sample=sample,
+                     sort=sort,
+                     order=order,
+                     facet=facet,
+                     select=select,
+                     cursor=cursor)
+
+        return JSON.parse(String(r.body))
 
 end
 
@@ -246,13 +266,15 @@ function licenses(; query::Union{Nothing, String}=nothing,
 
          url="https://api.crossref.org/licenses"
 
-          return request(url=url,
-                         query=query,
-                         offset=offset,
-                         limit=limit,
-                         sample=sample,
-                         sort=sort,
-                         order=order,
-                         facet=facet)
+         r = request(url=url,
+                     query=query,
+                     offset=offset,
+                     limit=limit,
+                     sample=sample,
+                     sort=sort,
+                     order=order,
+                     facet=facet)
+
+        return JSON.parse(String(r.body))
 
 end

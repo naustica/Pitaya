@@ -1,5 +1,4 @@
 using HTTP
-using JSON
 
 include("utils.jl")
 
@@ -27,8 +26,8 @@ function request(; url::String,
                 end
         end
 
-        headers = (("User-Agent", string("mailto:", ENV["JULIA_MAILTO"])),
-                  ("X-USER-AGENT", string(ENV["JULIA_MAILTO"])))
+        headers = (("User-Agent", string("mailto:", ENV["MAILTO"])),
+                  ("X-USER-AGENT", string(ENV["MAILTO"])))
 
         payload = Dict("query" => query,
                        "filter" => filter_handler(filter),
@@ -47,6 +46,5 @@ function request(; url::String,
                 end
         end
 
-        r = HTTP.get(url, headers; query=payload)
-        return JSON.parse(String(r.body))
+        return r = HTTP.get(url, headers; query=payload)
 end
