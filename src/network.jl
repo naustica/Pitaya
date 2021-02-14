@@ -46,5 +46,5 @@ function request(; url::String,
                 end
         end
 
-        return r = HTTP.get(url, headers; query=payload)
+        return HTTP.get(url, headers; query=payload)
 end
