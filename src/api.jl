@@ -3,6 +3,25 @@ using JSON
 include("network.jl")
 
 
+"""
+    works(; kwargs...)
+
+Arguments:
+- `doi::Union{Nothing, String}`: DESCRIPTION
+- `query::Union{Nothing, String}`: DESCRIPTION
+- `filter::Union{Nothing, Dict{String, String}}`: DESCRIPTION
+- `offset::Union{Nothing, Int}`: DESCRIPTION
+- `limit::Union{Nothing, Int}`: DESCRIPTION
+- `sample::Union{Nothing, Int}`: DESCRIPTION
+- `sort::Union{Nothing, String}`: DESCRIPTION
+- `order::Union{Nothing, String}`: DESCRIPTION
+- `facet::Union{Nothing, Dict{String, Union{String, Int}}}`: DESCRIPTION
+- `select::Union{Nothing, String}`: DESCRIPTION
+- `cursor::Union{Nothing, String}`: DESCRIPTION
+
+Returns:
+- Dict
+"""
 function works(; doi::Union{Nothing, String}=nothing,
                query::Union{Nothing, String}=nothing,
                filter::Union{Nothing, Dict{String, String}}=nothing,
@@ -40,6 +59,26 @@ function works(; doi::Union{Nothing, String}=nothing,
 end
 
 
+"""
+    members(; kwargs...)
+
+Arguments:
+- `member_id::Union{Nothing, Int}`: DESCRIPTION
+- `query::Union{Nothing, String}`: DESCRIPTION
+- `filter::Union{Nothing, Dict{String, String}}`: DESCRIPTION
+- `offset::Union{Nothing, Int}`: DESCRIPTION
+- `limit::Union{Nothing, Int}`: DESCRIPTION
+- `sample::Union{Nothing, Int}`: DESCRIPTION
+- `sort::Union{Nothing, String}`: DESCRIPTION
+- `order::Union{Nothing, String}`: DESCRIPTION
+- `facet::Union{Nothing, Dict{String, Union{String, Int}}}`: DESCRIPTION
+- `select::Union{Nothing, String}`: DESCRIPTION
+- `works::Bool`: DESCRIPTION
+- `cursor::Union{Nothing, String}`: DESCRIPTION
+
+Returns:
+- Dict
+"""
 function members(; member_id::Union{Nothing, Int}=nothing,
                  query::Union{Nothing, String}=nothing,
                  filter::Union{Nothing, Dict{String, String}}=nothing,
@@ -83,6 +122,26 @@ function members(; member_id::Union{Nothing, Int}=nothing,
 end
 
 
+"""
+    funders(; kwargs...)
+
+Arguments:
+- `funder_id::Union{Nothing, String}`: DESCRIPTION
+- `query::Union{Nothing, String}`: DESCRIPTION
+- `filter::Union{Nothing, Dict{String, String}}`: DESCRIPTION
+- `offset::Union{Nothing, Int}`: DESCRIPTION
+- `limit::Union{Nothing, Int}`: DESCRIPTION
+- `sample::Union{Nothing, Int}`: DESCRIPTION
+- `sort::Union{Nothing, String}`: DESCRIPTION
+- `order::Union{Nothing, String}`: DESCRIPTION
+- `facet::Union{Nothing, Dict{String, Union{String, Int}}}`: DESCRIPTION
+- `select::Union{Nothing, String}`: DESCRIPTION
+- `works::Bool`: DESCRIPTION
+- `cursor::Union{Nothing, String}`: DESCRIPTION
+
+Returns:
+- `Dict`
+"""
 function funders(; funder_id::Union{Nothing, String}=nothing,
                  query::Union{Nothing, String}=nothing,
                  filter::Union{Nothing, Dict{String, String}}=nothing,
@@ -126,6 +185,26 @@ function funders(; funder_id::Union{Nothing, String}=nothing,
 end
 
 
+"""
+    journals(; kwargs...)
+
+Arguments:
+- `issn::Union{Nothing, String}`: DESCRIPTION
+- `query::Union{Nothing, String}`: DESCRIPTION
+- `filter::Union{Nothing, Dict{String, String}}`: DESCRIPTION
+- `offset::Union{Nothing, Int}`: DESCRIPTION
+- `limit::Union{Nothing, Int}`: DESCRIPTION
+- `sample::Union{Nothing, Int}`: DESCRIPTION
+- `sort::Union{Nothing, String}`: DESCRIPTION
+- `order::Union{Nothing, String}`: DESCRIPTION
+- `facet::Union{Nothing, Dict{String, Union{String, Int}}}`: DESCRIPTION
+- `select::Union{Nothing, String}`: DESCRIPTION
+- `works::Bool`: DESCRIPTION
+- `cursor::Union{Nothing, String}`: DESCRIPTION
+
+Returns:
+- `Dict`
+"""
 function journals(; issn::Union{Nothing, String}=nothing,
                   query::Union{Nothing, String}=nothing,
                   filter::Union{Nothing, Dict{String, String}}=nothing,
@@ -170,6 +249,26 @@ function journals(; issn::Union{Nothing, String}=nothing,
 end
 
 
+"""
+    types(; kwargs...)
+
+Arguments:
+- `type_id::Union{Nothing, String}`: DESCRIPTION
+- `query::Union{Nothing, String}`: DESCRIPTION
+- `filter::Union{Nothing, Dict{String, String}}`: DESCRIPTION
+- `offset::Union{Nothing, Int}`: DESCRIPTION
+- `limit::Union{Nothing, Int}`: DESCRIPTION
+- `sample::Union{Nothing, Int}`: DESCRIPTION
+- `sort::Union{Nothing, String}`: DESCRIPTION
+- `order::Union{Nothing, String}`: DESCRIPTION
+- `facet::Union{Nothing, Dict{String, Union{String, Int}}}`: DESCRIPTION
+- `select::Union{Nothing, String}`: DESCRIPTION
+- `works::Bool`: DESCRIPTION
+- `cursor::Union{Nothing, String}`: DESCRIPTION
+
+Returns:
+- `Dict`
+"""
 function types(; type_id::Union{Nothing, String}=nothing,
                query::Union{Nothing, String}=nothing,
                filter::Union{Nothing, Dict{String, String}}=nothing,
@@ -213,6 +312,26 @@ function types(; type_id::Union{Nothing, String}=nothing,
 end
 
 
+"""
+    prefixes(; kwargs...)
+
+Arguments:
+- `owner_prefix::Union{Nothing, String}`: DESCRIPTION
+- `query::Union{Nothing, String}`: DESCRIPTION
+- `filter::Union{Nothing, Dict{String, String}}`: DESCRIPTION
+- `offset::Union{Nothing, Int}`: DESCRIPTION
+- `limit::Union{Nothing, Int}`: DESCRIPTION
+- `sample::Union{Nothing, Int}`: DESCRIPTION
+- `sort::Union{Nothing, String}`: DESCRIPTION
+- `order::Union{Nothing, String}`: DESCRIPTION
+- `facet::Union{Nothing, Dict{String, Union{String, Int}}}`: DESCRIPTION
+- `select::Union{Nothing, String}`: DESCRIPTION
+- `works::Bool`: DESCRIPTION
+- `cursor::Union{Nothing, String}`: DESCRIPTION
+
+Returns:
+- `Dict`
+"""
 function prefixes(; owner_prefix::Union{Nothing, String}=nothing,
                   query::Union{Nothing, String}=nothing,
                   filter::Union{Nothing, Dict{String, String}}=nothing,
@@ -256,6 +375,21 @@ function prefixes(; owner_prefix::Union{Nothing, String}=nothing,
 end
 
 
+"""
+    licenses(; kwargs...)
+
+Arguments:
+- `query::Union{Nothing, String}`: DESCRIPTION
+- `offset::Union{Nothing, Int}`: DESCRIPTION
+- `limit::Union{Nothing, Int}`: DESCRIPTION
+- `sample::Union{Nothing, Int}`: DESCRIPTION
+- `sort::Union{Nothing, String}`: DESCRIPTION
+- `order::Union{Nothing, String}`: DESCRIPTION
+- `facet::Union{Nothing, Dict{String, Union{String, Int}}}`: DESCRIPTION
+
+Returns:
+- `Dict`
+"""
 function licenses(; query::Union{Nothing, String}=nothing,
                   offset::Union{Nothing, Int}=nothing,
                   limit::Union{Nothing, Int}=nothing,

@@ -24,45 +24,45 @@ ENV["MAILTO"] = "nick.haupka@gmail.com"
 ### Works
 
 ```Julia
-print(works(query="Heisenberg", limit=1))
+works(query="Heisenberg", limit=1)
 ```
 
 ```Julia
-print(works(doi="10.1038/nature12373"))
+works(doi="10.1038/nature12373")
 ```
 
 ### Members
 
 ```Julia
-print(members(member_id=98, works=true, limit=5, sort="updated"))
+members(member_id=98, works=true, limit=5, sort="updated")
 ```
 
 ### Funders
 
 ```Julia
-print(funders(funder_id="10.13039/100000001", works=true, limit=5))
+funders(funder_id="10.13039/100000001", works=true, limit=5)
 ```
 
 ### Journals
 
 ```Julia
-print(journals(issn="1549-7712", works=true, offset=20, limit=10))
+journals(issn="1549-7712", works=true, offset=20, limit=10)
 ```
 
 ### Types
 
 ```Julia
-print(types(type_id="reference-book", works=true, sample=20))
+types(type_id="reference-book", works=true, sample=20)
 ```
 
 ### Prefixes
 
 ```Julia
-print(prefixes(owner_prefix="10.1016", works=true, order="desc", limit=20))
+prefixes(owner_prefix="10.1016", works=true, order="desc", limit=20)
 ```
 
 ### Licenses
 
 ```Julia
-print(licenses(query="creative", limit=3))
+licenses(query="creative", limit=3)
 ```

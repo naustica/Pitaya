@@ -4,4 +4,8 @@ makedocs(sitename="Pitaya",
          modules = [Pitaya],
          authors="Nick Haupka",
          pages=[
-            "Home" => "index.md"])
+            "API reference" => "index.md"])
+
+deploydocs(;
+  repo="github.com/naustica/Pitaya"
+)
