@@ -7,5 +7,5 @@ makedocs(sitename="Pitaya",
             "API reference" => "index.md"])
 
 deploydocs(;
-  repo="github.com/naustica/Pitaya"
+  repo="github.com/naustica/Pitaya.git"
 )
