@@ -7,17 +7,17 @@ include("network.jl")
     works(; kwargs...)
 
 Arguments:
-- `doi::Union{Nothing, String}`: DESCRIPTION
-- `query::Union{Nothing, String}`: DESCRIPTION
-- `filter::Union{Nothing, Dict{String, String}}`: DESCRIPTION
-- `offset::Union{Nothing, Int}`: DESCRIPTION
-- `limit::Union{Nothing, Int}`: DESCRIPTION
-- `sample::Union{Nothing, Int}`: DESCRIPTION
-- `sort::Union{Nothing, String}`: DESCRIPTION
-- `order::Union{Nothing, String}`: DESCRIPTION
-- `facet::Union{Nothing, Dict{String, Int}}`: DESCRIPTION
-- `select::Union{Nothing, String}`: DESCRIPTION
-- `cursor::Union{Nothing, String}`: DESCRIPTION
+- `doi::Union{Nothing, String}`: DOI of the work.
+- `query::Union{Nothing, String}`: A query string.
+- `filter::Union{Nothing, Dict{String, String}}`: Filter options.
+- `offset::Union{Nothing, Int}`: Number of record to start at.
+- `limit::Union{Nothing, Int}`: Number of results to return.
+- `sample::Union{Nothing, Int}`: Number of random results to return.
+- `sort::Union{Nothing, String}`: Field to sort on.
+- `order::Union{Nothing, String}`: Sort order, one of ‘asc’ or ‘desc’.
+- `facet::Union{Nothing, Dict{String, Int}}`: Facet options.
+- `select::Union{Nothing, String}`: Select specific fields.
+- `cursor::Union{Nothing, String}`: Cursor character string to do deep paging.
 
 Returns:
 - Dict
@@ -63,18 +63,18 @@ end
     members(; kwargs...)
 
 Arguments:
-- `member_id::Union{Nothing, Int}`: DESCRIPTION
-- `query::Union{Nothing, String}`: DESCRIPTION
-- `filter::Union{Nothing, Dict{String, String}}`: DESCRIPTION
-- `offset::Union{Nothing, Int}`: DESCRIPTION
-- `limit::Union{Nothing, Int}`: DESCRIPTION
-- `sample::Union{Nothing, Int}`: DESCRIPTION
-- `sort::Union{Nothing, String}`: DESCRIPTION
-- `order::Union{Nothing, String}`: DESCRIPTION
-- `facet::Union{Nothing, Dict{String, Int}}`: DESCRIPTION
-- `select::Union{Nothing, String}`: DESCRIPTION
-- `works::Bool`: DESCRIPTION
-- `cursor::Union{Nothing, String}`: DESCRIPTION
+- `member_id::Union{Nothing, Int}`: ID of a Crossref member.
+- `query::Union{Nothing, String}`: A query string.
+- `filter::Union{Nothing, Dict{String, String}}`: Filter options.
+- `offset::Union{Nothing, Int}`: Number of record to start at.
+- `limit::Union{Nothing, Int}`: Number of results to return.
+- `sample::Union{Nothing, Int}`: Number of random results to return.
+- `sort::Union{Nothing, String}`: Field to sort on.
+- `order::Union{Nothing, String}`: Sort order, one of ‘asc’ or ‘desc’.
+- `facet::Union{Nothing, Dict{String, Int}}`: Facet options.
+- `select::Union{Nothing, String}`: Select specific fields.
+- `works::Bool`: If true, works returned as well.
+- `cursor::Union{Nothing, String}`: Cursor character string to do deep paging.
 
 Returns:
 - Dict
@@ -126,18 +126,18 @@ end
     funders(; kwargs...)
 
 Arguments:
-- `funder_id::Union{Nothing, String}`: DESCRIPTION
-- `query::Union{Nothing, String}`: DESCRIPTION
-- `filter::Union{Nothing, Dict{String, String}}`: DESCRIPTION
-- `offset::Union{Nothing, Int}`: DESCRIPTION
-- `limit::Union{Nothing, Int}`: DESCRIPTION
-- `sample::Union{Nothing, Int}`: DESCRIPTION
-- `sort::Union{Nothing, String}`: DESCRIPTION
-- `order::Union{Nothing, String}`: DESCRIPTION
-- `facet::Union{Nothing, Dict{String, Int}}`: DESCRIPTION
-- `select::Union{Nothing, String}`: DESCRIPTION
-- `works::Bool`: DESCRIPTION
-- `cursor::Union{Nothing, String}`: DESCRIPTION
+- `funder_id::Union{Nothing, String}`: ID of a funder.
+- `query::Union{Nothing, String}`: A query string.
+- `filter::Union{Nothing, Dict{String, String}}`: Filter options.
+- `offset::Union{Nothing, Int}`: Number of record to start at.
+- `limit::Union{Nothing, Int}`: Number of results to return.
+- `sample::Union{Nothing, Int}`: Number of random results to return.
+- `sort::Union{Nothing, String}`: Field to sort on.
+- `order::Union{Nothing, String}`: Sort order, one of ‘asc’ or ‘desc’.
+- `facet::Union{Nothing, Dict{String, Int}}`: Facet options.
+- `select::Union{Nothing, String}`: Select specific fields.
+- `works::Bool`: If true, works returned as well.
+- `cursor::Union{Nothing, String}`: Cursor character string to do deep paging.
 
 Returns:
 - `Dict`
@@ -189,18 +189,18 @@ end
     journals(; kwargs...)
 
 Arguments:
-- `issn::Union{Nothing, String}`: DESCRIPTION
-- `query::Union{Nothing, String}`: DESCRIPTION
-- `filter::Union{Nothing, Dict{String, String}}`: DESCRIPTION
-- `offset::Union{Nothing, Int}`: DESCRIPTION
-- `limit::Union{Nothing, Int}`: DESCRIPTION
-- `sample::Union{Nothing, Int}`: DESCRIPTION
-- `sort::Union{Nothing, String}`: DESCRIPTION
-- `order::Union{Nothing, String}`: DESCRIPTION
-- `facet::Union{Nothing, Dict{String, Int}}`: DESCRIPTION
-- `select::Union{Nothing, String}`: DESCRIPTION
-- `works::Bool`: DESCRIPTION
-- `cursor::Union{Nothing, String}`: DESCRIPTION
+- `issn::Union{Nothing, String}`: A issn of a journal.
+- `query::Union{Nothing, String}`: A query string.
+- `filter::Union{Nothing, Dict{String, String}}`: Filter options.
+- `offset::Union{Nothing, Int}`: Number of record to start at.
+- `limit::Union{Nothing, Int}`: Number of results to return.
+- `sample::Union{Nothing, Int}`: Number of random results to return.
+- `sort::Union{Nothing, String}`: Field to sort on.
+- `order::Union{Nothing, String}`: Sort order, one of ‘asc’ or ‘desc’.
+- `facet::Union{Nothing, Dict{String, Int}}`: Facet options.
+- `select::Union{Nothing, String}`: Select specific fields.
+- `works::Bool`: If true, works returned as well.
+- `cursor::Union{Nothing, String}`: Cursor character string to do deep paging.
 
 Returns:
 - `Dict`
@@ -253,18 +253,18 @@ end
     types(; kwargs...)
 
 Arguments:
-- `type_id::Union{Nothing, String}`: DESCRIPTION
-- `query::Union{Nothing, String}`: DESCRIPTION
-- `filter::Union{Nothing, Dict{String, String}}`: DESCRIPTION
-- `offset::Union{Nothing, Int}`: DESCRIPTION
-- `limit::Union{Nothing, Int}`: DESCRIPTION
-- `sample::Union{Nothing, Int}`: DESCRIPTION
-- `sort::Union{Nothing, String}`: DESCRIPTION
-- `order::Union{Nothing, String}`: DESCRIPTION
-- `facet::Union{Nothing, Dict{String, Int}}`: DESCRIPTION
-- `select::Union{Nothing, String}`: DESCRIPTION
-- `works::Bool`: DESCRIPTION
-- `cursor::Union{Nothing, String}`: DESCRIPTION
+- `type_id::Union{Nothing, String}`: ID of a metadata work type.
+- `query::Union{Nothing, String}`: A query string.
+- `filter::Union{Nothing, Dict{String, String}}`: Filter options.
+- `offset::Union{Nothing, Int}`: Number of record to start at.
+- `limit::Union{Nothing, Int}`: Number of results to return.
+- `sample::Union{Nothing, Int}`: Number of random results to return.
+- `sort::Union{Nothing, String}`: Field to sort on.
+- `order::Union{Nothing, String}`: Sort order, one of ‘asc’ or ‘desc’.
+- `facet::Union{Nothing, Dict{String, Int}}`: Facet options.
+- `select::Union{Nothing, String}`: Select specific fields.
+- `works::Bool`: If true, works returned as well.
+- `cursor::Union{Nothing, String}`: Cursor character string to do deep paging.
 
 Returns:
 - `Dict`
@@ -316,18 +316,18 @@ end
     prefixes(; kwargs...)
 
 Arguments:
-- `owner_prefix::Union{Nothing, String}`: DESCRIPTION
-- `query::Union{Nothing, String}`: DESCRIPTION
-- `filter::Union{Nothing, Dict{String, String}}`: DESCRIPTION
-- `offset::Union{Nothing, Int}`: DESCRIPTION
-- `limit::Union{Nothing, Int}`: DESCRIPTION
-- `sample::Union{Nothing, Int}`: DESCRIPTION
-- `sort::Union{Nothing, String}`: DESCRIPTION
-- `order::Union{Nothing, String}`: DESCRIPTION
-- `facet::Union{Nothing, Dict{String, Int}}`: DESCRIPTION
-- `select::Union{Nothing, String}`: DESCRIPTION
-- `works::Bool`: DESCRIPTION
-- `cursor::Union{Nothing, String}`: DESCRIPTION
+- `owner_prefix::Union{Nothing, String}`: A DOI owner prefix.
+- `query::Union{Nothing, String}`: A query string.
+- `filter::Union{Nothing, Dict{String, String}}`: Filter options.
+- `offset::Union{Nothing, Int}`: Number of record to start at.
+- `limit::Union{Nothing, Int}`: Number of results to return.
+- `sample::Union{Nothing, Int}`: Number of random results to return.
+- `sort::Union{Nothing, String}`: Field to sort on.
+- `order::Union{Nothing, String}`: Sort order, one of ‘asc’ or ‘desc’.
+- `facet::Union{Nothing, Dict{String, Int}}`: Facet options.
+- `select::Union{Nothing, String}`: Select specific fields.
+- `works::Bool`: If true, works returned as well.
+- `cursor::Union{Nothing, String}`: Cursor character string to do deep paging.
 
 Returns:
 - `Dict`
@@ -379,13 +379,13 @@ end
     licenses(; kwargs...)
 
 Arguments:
-- `query::Union{Nothing, String}`: DESCRIPTION
-- `offset::Union{Nothing, Int}`: DESCRIPTION
-- `limit::Union{Nothing, Int}`: DESCRIPTION
-- `sample::Union{Nothing, Int}`: DESCRIPTION
-- `sort::Union{Nothing, String}`: DESCRIPTION
-- `order::Union{Nothing, String}`: DESCRIPTION
-- `facet::Union{Nothing, Dict{String, Int}}`: DESCRIPTION
+- `query::Union{Nothing, String}`: A query string.
+- `offset::Union{Nothing, Int}`: Number of record to start at.
+- `limit::Union{Nothing, Int}`: Number of results to return.
+- `sample::Union{Nothing, Int}`: Number of random results to return.
+- `sort::Union{Nothing, String}`: Field to sort on.
+- `order::Union{Nothing, String}`: Sort order, one of ‘asc’ or ‘desc’.
+- `facet::Union{Nothing, Dict{String, Int}}`: Facet options.
 
 Returns:
 - `Dict`
@@ -418,7 +418,7 @@ end
     agency(doi)
 
 Arguments:
-- `doi::String`: DESCRIPTION
+- `doi::String`: DOI of the work.
 
 Returns:
 - Dict
