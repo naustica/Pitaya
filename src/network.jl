@@ -10,7 +10,7 @@ function request(; url::String,
                  sample::Union{Nothing, Int}=nothing,
                  sort::Union{Nothing, String}=nothing,
                  order::Union{Nothing, String}=nothing,
-                 facet::Union{Nothing, Bool, String}=nothing,
+                 facet::Union{Nothing, Dict{String, Int}}=nothing,
                  select::Union{Nothing, String}=nothing,
                  cursor::Union{Nothing, String}=nothing)
 
@@ -26,8 +26,20 @@ function request(; url::String,
                 end
         end
 
-        headers = (("User-Agent", string("mailto:", ENV["MAILTO"])),
-                  ("X-USER-AGENT", string(ENV["MAILTO"])))
+        headers = []
+
+        try
+                push!(headers, ("User-Agent", string("mailto:", ENV["MAILTO"])))
+                push!(headers, ("X-USER-AGENT", string(ENV["MAILTO"])))
+        catch e
+                #println(e)
+        end
+
+        try
+                push!(headers, ("Crossref-Plus-API-Token", string(ENV["CROSSREF_PLUS_API_TOKEN"])))
+        catch e
+                #println(e)
+        end
 
         payload = Dict("query" => query,
                        "filter" => filter_handler(filter),

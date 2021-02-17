@@ -8,6 +8,6 @@ makedocs(sitename="Pitaya",
 
 deploydocs(;
   repo="github.com/naustica/Pitaya.git",
-  devbranch = "main",
-  devurl = "latest",
+  devbranch="main",
+  devurl="latest",
 )

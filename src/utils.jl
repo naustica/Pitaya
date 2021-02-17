@@ -1,4 +1,4 @@
-function filter_handler(x::Union{Nothing, Dict{String, String}})
+function filter_handler(x::Union{Nothing, Dict{String, T} where T})
 
     if isnothing(x)
         return nothing

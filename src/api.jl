@@ -15,7 +15,7 @@ Arguments:
 - `sample::Union{Nothing, Int}`: DESCRIPTION
 - `sort::Union{Nothing, String}`: DESCRIPTION
 - `order::Union{Nothing, String}`: DESCRIPTION
-- `facet::Union{Nothing, Dict{String, Union{String, Int}}}`: DESCRIPTION
+- `facet::Union{Nothing, Dict{String, Int}}`: DESCRIPTION
 - `select::Union{Nothing, String}`: DESCRIPTION
 - `cursor::Union{Nothing, String}`: DESCRIPTION
 
@@ -30,7 +30,7 @@ function works(; doi::Union{Nothing, String}=nothing,
                sample::Union{Nothing, Int}=nothing,
                sort::Union{Nothing, String}=nothing,
                order::Union{Nothing, String}=nothing,
-               facet::Union{Nothing, Dict{String, Union{String, Int}}}=nothing,
+               facet::Union{Nothing, Dict{String, Int}}=nothing,
                select::Union{Nothing, String}=nothing,
                cursor::Union{Nothing, String}=nothing)
 
@@ -71,7 +71,7 @@ Arguments:
 - `sample::Union{Nothing, Int}`: DESCRIPTION
 - `sort::Union{Nothing, String}`: DESCRIPTION
 - `order::Union{Nothing, String}`: DESCRIPTION
-- `facet::Union{Nothing, Dict{String, Union{String, Int}}}`: DESCRIPTION
+- `facet::Union{Nothing, Dict{String, Int}}`: DESCRIPTION
 - `select::Union{Nothing, String}`: DESCRIPTION
 - `works::Bool`: DESCRIPTION
 - `cursor::Union{Nothing, String}`: DESCRIPTION
@@ -87,7 +87,7 @@ function members(; member_id::Union{Nothing, Int}=nothing,
                  sample::Union{Nothing, Int}=nothing,
                  sort::Union{Nothing, String}=nothing,
                  order::Union{Nothing, String}=nothing,
-                 facet::Union{Nothing, Dict{String, Union{String, Int}}}=nothing,
+                 facet::Union{Nothing, Dict{String, Int}}=nothing,
                  select::Union{Nothing, String}=nothing,
                  works::Bool=false,
                  cursor::Union{Nothing, String}=nothing)
@@ -134,7 +134,7 @@ Arguments:
 - `sample::Union{Nothing, Int}`: DESCRIPTION
 - `sort::Union{Nothing, String}`: DESCRIPTION
 - `order::Union{Nothing, String}`: DESCRIPTION
-- `facet::Union{Nothing, Dict{String, Union{String, Int}}}`: DESCRIPTION
+- `facet::Union{Nothing, Dict{String, Int}}`: DESCRIPTION
 - `select::Union{Nothing, String}`: DESCRIPTION
 - `works::Bool`: DESCRIPTION
 - `cursor::Union{Nothing, String}`: DESCRIPTION
@@ -150,7 +150,7 @@ function funders(; funder_id::Union{Nothing, String}=nothing,
                  sample::Union{Nothing, Int}=nothing,
                  sort::Union{Nothing, String}=nothing,
                  order::Union{Nothing, String}=nothing,
-                 facet::Union{Nothing, Dict{String, Union{String, Int}}}=nothing,
+                 facet::Union{Nothing, Dict{String, Int}}=nothing,
                  select::Union{Nothing, String}=nothing,
                  works::Bool=false,
                  cursor::Union{Nothing, String}=nothing)
@@ -197,7 +197,7 @@ Arguments:
 - `sample::Union{Nothing, Int}`: DESCRIPTION
 - `sort::Union{Nothing, String}`: DESCRIPTION
 - `order::Union{Nothing, String}`: DESCRIPTION
-- `facet::Union{Nothing, Dict{String, Union{String, Int}}}`: DESCRIPTION
+- `facet::Union{Nothing, Dict{String, Int}}`: DESCRIPTION
 - `select::Union{Nothing, String}`: DESCRIPTION
 - `works::Bool`: DESCRIPTION
 - `cursor::Union{Nothing, String}`: DESCRIPTION
@@ -213,7 +213,7 @@ function journals(; issn::Union{Nothing, String}=nothing,
                   sample::Union{Nothing, Int}=nothing,
                   sort::Union{Nothing, String}=nothing,
                   order::Union{Nothing, String}=nothing,
-                  facet::Union{Nothing, Dict{String, Union{String, Int}}}=nothing,
+                  facet::Union{Nothing, Dict{String, Int}}=nothing,
                   select::Union{Nothing, String}=nothing,
                   works::Bool=false,
                   cursor::Union{Nothing, String}=nothing)
@@ -261,7 +261,7 @@ Arguments:
 - `sample::Union{Nothing, Int}`: DESCRIPTION
 - `sort::Union{Nothing, String}`: DESCRIPTION
 - `order::Union{Nothing, String}`: DESCRIPTION
-- `facet::Union{Nothing, Dict{String, Union{String, Int}}}`: DESCRIPTION
+- `facet::Union{Nothing, Dict{String, Int}}`: DESCRIPTION
 - `select::Union{Nothing, String}`: DESCRIPTION
 - `works::Bool`: DESCRIPTION
 - `cursor::Union{Nothing, String}`: DESCRIPTION
@@ -277,7 +277,7 @@ function types(; type_id::Union{Nothing, String}=nothing,
                sample::Union{Nothing, Int}=nothing,
                sort::Union{Nothing, String}=nothing,
                order::Union{Nothing, String}=nothing,
-               facet::Union{Nothing, Dict{String, Union{String, Int}}}=nothing,
+               facet::Union{Nothing, Dict{String, Int}}=nothing,
                select::Union{Nothing, String}=nothing,
                works::Bool=false,
                cursor::Union{Nothing, String}=nothing)
@@ -324,7 +324,7 @@ Arguments:
 - `sample::Union{Nothing, Int}`: DESCRIPTION
 - `sort::Union{Nothing, String}`: DESCRIPTION
 - `order::Union{Nothing, String}`: DESCRIPTION
-- `facet::Union{Nothing, Dict{String, Union{String, Int}}}`: DESCRIPTION
+- `facet::Union{Nothing, Dict{String, Int}}`: DESCRIPTION
 - `select::Union{Nothing, String}`: DESCRIPTION
 - `works::Bool`: DESCRIPTION
 - `cursor::Union{Nothing, String}`: DESCRIPTION
@@ -340,7 +340,7 @@ function prefixes(; owner_prefix::Union{Nothing, String}=nothing,
                   sample::Union{Nothing, Int}=nothing,
                   sort::Union{Nothing, String}=nothing,
                   order::Union{Nothing, String}=nothing,
-                  facet::Union{Nothing, Dict{String, Union{String, Int}}}=nothing,
+                  facet::Union{Nothing, Dict{String, Int}}=nothing,
                   select::Union{Nothing, String}=nothing,
                   works::Bool=false,
                   cursor::Union{Nothing, String}=nothing)
@@ -385,7 +385,7 @@ Arguments:
 - `sample::Union{Nothing, Int}`: DESCRIPTION
 - `sort::Union{Nothing, String}`: DESCRIPTION
 - `order::Union{Nothing, String}`: DESCRIPTION
-- `facet::Union{Nothing, Dict{String, Union{String, Int}}}`: DESCRIPTION
+- `facet::Union{Nothing, Dict{String, Int}}`: DESCRIPTION
 
 Returns:
 - `Dict`
@@ -396,7 +396,7 @@ function licenses(; query::Union{Nothing, String}=nothing,
                   sample::Union{Nothing, Int}=nothing,
                   sort::Union{Nothing, String}=nothing,
                   order::Union{Nothing, String}=nothing,
-                  facet::Union{Nothing, Dict{String, Union{String, Int}}}=nothing)
+                  facet::Union{Nothing, Dict{String, Int}}=nothing)
 
          url="https://api.crossref.org/licenses"
 

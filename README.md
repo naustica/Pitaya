@@ -10,7 +10,7 @@ A Julia interface to the [Crossref REST API](https://github.com/CrossRef/rest-ap
 ## Install
 
 ```bash
-(v1.5) pkg> add https://github.com/naustica/Pitaya
+(v1.5) pkg> add Pitaya
 ```
 
 ## Usage
@@ -18,7 +18,9 @@ A Julia interface to the [Crossref REST API](https://github.com/CrossRef/rest-ap
 ```Julia
 using Pitaya
 
+# Optional
 ENV["MAILTO"] = "nick.haupka@gmail.com"
+ENV["CROSSREF_PLUS_API_TOKEN"] = "YOUR TOKEN"
 ```
 
 ### Works
@@ -34,7 +36,12 @@ works(doi="10.1038/nature12373")
 ### Members
 
 ```Julia
-members(member_id=98, works=true, limit=5, sort="updated")
+members(member_id=98,
+        works=true,
+        limit=5,
+        sort="updated",
+        filter=Dict("full-text.type" => "application/pdf",
+                    "has-orcid" => "true"))
 ```
 
 ### Funders
@@ -46,7 +53,11 @@ funders(funder_id="10.13039/100000001", works=true, limit=5)
 ### Journals
 
 ```Julia
-journals(issn="1549-7712", works=true, offset=20, limit=10)
+journals(issn="1549-7712",
+         works=true,
+         offset=20,
+         limit=10,
+         facet=Dict("published" => 2007))
 ```
 
 ### Types
