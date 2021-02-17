@@ -1,7 +1,7 @@
 # Pitaya
 
 [![CI](https://github.com/naustica/Pitaya/workflows/CI/badge.svg)](https://github.com/naustica/Pitaya/actions?query=workflow%3ACI)
-[![Package - Version](https://img.shields.io/badge/version-v0.1.5-orange)]()
+[![Package - Version](https://img.shields.io/badge/version-v0.2-orange)]()
 [![Documentation Status](https://img.shields.io/badge/docs-latest-blue.svg)](https://naustica.github.io/Pitaya/latest)
 [![License](https://img.shields.io/github/license/naustica/Pitaya)](https://github.com/naustica/Pitaya/blob/main/LICENSE.txt)
 

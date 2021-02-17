@@ -1,7 +1,7 @@
 name = "Pitaya"
 uuid = "0b12f483-aaff-4a42-bf4f-5a3345f2360f"
 authors = ["Nick Haupka"]
-version = "0.1.5"
+version = "0.2"
 
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
