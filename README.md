@@ -1,7 +1,7 @@
 # Pitaya
 
 [![CI](https://github.com/naustica/Pitaya/workflows/CI/badge.svg)](https://github.com/naustica/Pitaya/actions?query=workflow%3ACI)
-[![Package - Version](https://img.shields.io/badge/version-v0.1-blue)]()
+[![Package - Version](https://img.shields.io/badge/version-v0.1-orange)]()
 [![Documentation Status](https://img.shields.io/badge/docs-latest-blue.svg)](https://naustica.github.io/Pitaya/dev)
 [![License](https://img.shields.io/github/license/naustica/Pitaya)](https://github.com/naustica/Pitaya/blob/main/LICENSE.txt)
 
@@ -76,4 +76,10 @@ prefixes(owner_prefix="10.1016", works=true, order="desc", limit=20)
 
 ```Julia
 licenses(query="creative", limit=3)
+```
+
+### Registration agency
+
+```Julia
+agency("10.1038/nature12373")
 ```

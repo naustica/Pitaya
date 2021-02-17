@@ -18,4 +18,6 @@ include("../src/api.jl")
 
     @test licenses(query="creative", limit=1) isa Dict
 
+    @test agency("10.1038/nature12373") isa Dict
+
 end

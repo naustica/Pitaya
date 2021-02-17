@@ -412,3 +412,23 @@ function licenses(; query::Union{Nothing, String}=nothing,
         return JSON.parse(String(r.body))
 
 end
+
+
+"""
+    agency(doi)
+
+Arguments:
+- `doi::String`: DESCRIPTION
+
+Returns:
+- Dict
+"""
+function agency(doi::String)
+
+    url = string("https://api.crossref.org/works/", doi, "/agency")
+
+    r = request(url=url)
+
+    return JSON.parse(String(r.body))
+
+end
